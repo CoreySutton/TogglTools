@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CoreySutton.TogglTools.TogglReportApi.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Domain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://toggl.com</Value>
+    </Setting>
+    <Setting Name="WorkspaceEndpoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/api/v8/workspaces</Value>
+    </Setting>
+    <Setting Name="ReportEndpoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/reports/api/v2/details</Value>
+    </Setting>
+    <Setting Name="DefaultApiPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">api_token</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
