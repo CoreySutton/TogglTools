@@ -31,6 +31,8 @@ namespace CoreySutton.TogglTools.TogglConsole
                 // Prompt the user to select a workspace
                 Workspace selectedWorkspace = WorkspaceSelector.Prompt(workspaces);
 
+                DayOfWeek firstDayOfWeek = DayOfWeekSelector.Prompt();
+
                 // Get the function collection
                 TogglFunctions functionCollection = TogglFunctions.BuildStandardCollection();
 
