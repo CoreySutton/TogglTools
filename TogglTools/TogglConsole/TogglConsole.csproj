@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utilities\DayOfWeekSelector.cs" />
+    <Compile Include="Utilities\FirstDayOfWeekSelector.cs" />
     <Compile Include="Utilities\FunctionSelector.cs" />
     <Compile Include="Domain\TogglFunctions.cs" />
     <Compile Include="Program.cs" />

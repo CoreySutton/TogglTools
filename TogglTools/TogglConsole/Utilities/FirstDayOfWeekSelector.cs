@@ -2,7 +2,7 @@
 
 namespace CoreySutton.TogglTools.TogglConsole
 {
-    class DayOfWeekSelector
+    class FirstDayOfWeekSelector
     {
         public static DayOfWeek Prompt()
         {
