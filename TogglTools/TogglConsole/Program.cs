@@ -58,27 +58,15 @@ namespace CoreySutton.TogglTools.TogglConsole
             }
             catch (ArgumentNullException ex)
             {
-                Logger.LogLine(
-                    $"An error occurred: Argument should not be null {ex.Message}",
-                    ConsoleColor.Red);
-
-                Logger.LogLine(ex.StackTrace, ConsoleColor.Gray);
+                HandleException($"An error occurred: Argument should not be null {ex.Message}", ex);
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Logger.LogLine(
-                    $"An error occurred: Argument is out of range {ex.Message}",
-                    ConsoleColor.Red);
-
-                Logger.LogLine(ex.StackTrace, ConsoleColor.Gray);
+                HandleException($"An error occurred: Argument is out of range {ex.Message}", ex);
             }
             catch (Exception ex)
             {
-                Logger.LogLine(
-                    $"An error occurred: {ex.Message}",
-                    ConsoleColor.Red);
-
-                Logger.LogLine(ex.StackTrace, ConsoleColor.Gray);
+                HandleException($"An error occurred: {ex.Message}", ex);
             }
 
             CloseApplication();
@@ -134,6 +122,12 @@ namespace CoreySutton.TogglTools.TogglConsole
                 ApiPassword = apiPassword,
                 Email = email
             };
+        }
+
+        private static void HandleException(string message, Exception ex)
+        {
+            Logger.LogLine(message, ConsoleColor.Red);
+            Logger.LogLine(ex.StackTrace, ConsoleColor.Gray);
         }
     }
 }
