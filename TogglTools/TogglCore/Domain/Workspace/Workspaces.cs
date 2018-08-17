@@ -5,31 +5,33 @@ using Newtonsoft.Json;
 
 namespace CoreySutton.TogglTools.TogglCore
 {
-    public class Workspaces : IDictionary<string, string>
+    public class Workspaces : IDictionary<int, Workspace>
     {
-        public readonly Dictionary<string, string> Data;
+        public readonly IDictionary<int, Workspace> Data;
 
         public Workspaces(string response = null)
         {
-            Data = new Dictionary<string, string>();
+            Data = new Dictionary<int, Workspace>();
             if (response != null)
             {
-                Data = ProcessWorkspacesResponse(response) ?? new Dictionary<string, string>();
+                Data = ProcessWorkspacesResponse(response) ?? new Dictionary<int, Workspace>();
             }
         }
 
-        private Dictionary<string, string> ProcessWorkspacesResponse(string response)
+        private IDictionary<int, Workspace> ProcessWorkspacesResponse(string response)
         {
             ArgUtil.NotNull(response);
 
             List<Workspace> workspaces = JsonConvert.DeserializeObject<List<Workspace>>(response);
 
-            var workspacesDict = new Dictionary<string, string>();
+            var workspacesDict = new Dictionary<int, Workspace>();
+            int count = 1;
             foreach (Workspace workspace in workspaces)
             {
                 if (workspace.Id != null && workspace.Name != null)
                 {
-                    workspacesDict.Add(workspace.Id, workspace.Name);
+                    workspacesDict.Add(count, workspace);
+                    count++;
                 }
             }
 
@@ -38,24 +40,24 @@ namespace CoreySutton.TogglTools.TogglCore
 
         #region IDictionary Implementation
 
-        public string this[string key] { get => Data[key]; set => Data[key] = value; }
+        public Workspace this[int key] { get => Data[key]; set => Data[key] = value; }
 
-        public ICollection<string> Keys => ((IDictionary<string, string>)Data).Keys;
+        public ICollection<int> Keys => Data.Keys;
 
-        public ICollection<string> Values => ((IDictionary<string, string>)Data).Values;
+        public ICollection<Workspace> Values => Data.Values;
 
         public int Count => Data.Count;
 
-        public bool IsReadOnly => ((IDictionary<string, string>)Data).IsReadOnly;
+        public bool IsReadOnly => Data.IsReadOnly;
 
-        public void Add(string key, string value)
+        public void Add(int key, Workspace value)
         {
             Data.Add(key, value);
         }
 
-        public void Add(KeyValuePair<string, string> item)
+        public void Add(KeyValuePair<int, Workspace> item)
         {
-            ((IDictionary<string, string>)Data).Add(item);
+            Data.Add(item);
         }
 
         public void Clear()
@@ -63,44 +65,44 @@ namespace CoreySutton.TogglTools.TogglCore
             Data.Clear();
         }
 
-        public bool Contains(KeyValuePair<string, string> item)
+        public bool Contains(KeyValuePair<int, Workspace> item)
         {
-            return ((IDictionary<string, string>)Data).Contains(item);
+            return Data.Contains(item);
         }
 
-        public bool ContainsKey(string key)
+        public bool ContainsKey(int key)
         {
             return Data.ContainsKey(key);
         }
 
-        public void CopyTo(KeyValuePair<string, string>[] array, int arrayIndex)
+        public void CopyTo(KeyValuePair<int, Workspace>[] array, int arrayIndex)
         {
-            ((IDictionary<string, string>)Data).CopyTo(array, arrayIndex);
+            Data.CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+        public IEnumerator<KeyValuePair<int, Workspace>> GetEnumerator()
         {
-            return ((IDictionary<string, string>)Data).GetEnumerator();
+            return Data.GetEnumerator();
         }
 
-        public bool Remove(string key)
+        public bool Remove(int key)
         {
             return Data.Remove(key);
         }
 
-        public bool Remove(KeyValuePair<string, string> item)
+        public bool Remove(KeyValuePair<int, Workspace> item)
         {
-            return ((IDictionary<string, string>)Data).Remove(item);
+            return Data.Remove(item);
         }
 
-        public bool TryGetValue(string key, out string value)
+        public bool TryGetValue(int key, out Workspace value)
         {
             return Data.TryGetValue(key, out value);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IDictionary<string, string>)Data).GetEnumerator();
+            return Data.GetEnumerator();
         }
 
         #endregion

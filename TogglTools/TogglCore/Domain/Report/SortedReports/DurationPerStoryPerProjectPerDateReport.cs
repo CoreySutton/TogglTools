@@ -6,41 +6,55 @@ namespace CoreySutton.TogglTools.TogglCore
 {
     public class DurationPerStoryPerProjectPerDateReport : IDictionary<DateTime, Dictionary<string, Dictionary<string, double>>>
     {
-        public readonly Dictionary<DateTime, Dictionary<string, Dictionary<string, double>>> Data;
+        public readonly IDictionary<DateTime, Dictionary<string, Dictionary<string, double>>> Data;
 
         public DurationPerStoryPerProjectPerDateReport(Report report)
         {
+            Data = new Dictionary<DateTime, Dictionary<string, Dictionary<string, double>>>();
+
             foreach (var reportData in report.Datas)
             {
                 var date = reportData.Start.Date;
-                var project = reportData.Project;
-                var story = TogglTaskParser.GetStoryName(reportData.Description);
+                var project = reportData.Project ?? "No Project";
+                var story = string.IsNullOrEmpty(reportData.Description)
+                    ? "No Description"
+                    : TogglTaskParser.GetStoryName(reportData.Description);
                 var durationInHours = TimeConversion.MillisecondsToHours(reportData.Dur);
 
                 // Date
-                Dictionary<string, Dictionary<string, double>> durationPerstoryPerProjectMap;
-                Data.TryGetValue(date, out durationPerstoryPerProjectMap);
+                Data.TryGetValue(
+                    date,
+                    out Dictionary<string, Dictionary<string, double>> durationPerStoryPerProjectMap);
 
-                if (durationPerstoryPerProjectMap != null)
+                if (durationPerStoryPerProjectMap != null)
                 {
                     // Project
-                    Dictionary<string, double> durationPerstoryMap;
-                    durationPerstoryPerProjectMap.TryGetValue(project, out durationPerstoryMap);
+                    durationPerStoryPerProjectMap.TryGetValue(
+                        project,
+                        out Dictionary<string, double> durationPerStoryMap);
 
-                    if (durationPerstoryMap != null)
+                    if (durationPerStoryMap != null)
                     {
                         // Story
-                        durationPerstoryMap.Add(story, durationInHours);
-                        durationPerstoryPerProjectMap[project] = durationPerstoryMap;
+                        if (durationPerStoryMap.ContainsKey(story))
+                        {
+                            durationPerStoryMap[story] = durationPerStoryMap[story] + durationInHours;
+                        }
+                        else
+                        {
+                            durationPerStoryMap.Add(story, durationInHours);
+                        }
+
+                        durationPerStoryPerProjectMap[project] = durationPerStoryMap;
                     }
                     else
                     {
-                        durationPerstoryPerProjectMap.Add(
+                        durationPerStoryPerProjectMap.Add(
                             project,
                             new Dictionary<string, double> { { story, durationInHours } });
                     }
 
-                    Data[date] = durationPerstoryPerProjectMap;
+                    Data[date] = durationPerStoryPerProjectMap;
                 }
                 else
                 {

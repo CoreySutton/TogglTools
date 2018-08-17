@@ -65,7 +65,7 @@ namespace CoreySutton.TogglTools.TogglCore
         public int Id { get; set; }
 
         [JsonProperty("pid")]
-        public int Pid { get; set; }
+        public int? Pid { get; set; }
 
         [JsonProperty("title")]
         public Title Title { get; set; }

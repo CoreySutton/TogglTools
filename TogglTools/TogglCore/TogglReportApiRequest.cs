@@ -1,6 +1,6 @@
 ﻿namespace CoreySutton.TogglTools.TogglCore
 {
-    class TogglReportApiRequest : ITogglApiRequest
+    public class TogglReportApiRequest : ITogglApiRequest
     {
         private readonly ApiContext _apiContext;
 

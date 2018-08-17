@@ -21,7 +21,7 @@ namespace CoreySutton.TogglTools.TogglCore
             string requestUriString = $"{_apiContext.Paths.ReportEndpoint}" +
                                       $"?user_agent={_apiContext.Credentials.Email}" +
                                       $"&workspace_id={_apiContext.Parameters.WorkspaceKey}" +
-                                      $"s&ince={_apiContext.Parameters.Since:yyyy-MM-dd}";
+                                      $"&since={_apiContext.Parameters.Since:yyyy-MM-dd}";
 
             if (_apiContext.Parameters.Until != null)
             {

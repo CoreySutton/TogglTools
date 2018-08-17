@@ -1,6 +1,6 @@
 ﻿namespace CoreySutton.TogglTools.TogglCore
 {
-    interface ITogglApiRequest
+    public interface ITogglApiRequest
     {
         Report GetReport();
         Workspaces GetWorkspaces();

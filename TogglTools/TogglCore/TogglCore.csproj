@@ -60,6 +60,7 @@
     <Compile Include="TogglReportApiRequest.cs" />
     <Compile Include="Domain\Context\ApiPaths.cs" />
     <Compile Include="Utilities\DictionaryUtil.cs" />
+    <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\PathUtil.cs" />
     <Compile Include="Utilities\TimeConversion.cs" />
     <Compile Include="Utilities\TogglTaskParser.cs" />

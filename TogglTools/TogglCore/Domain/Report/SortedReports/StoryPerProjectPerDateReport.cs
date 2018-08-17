@@ -6,10 +6,12 @@ namespace CoreySutton.TogglTools.TogglCore
 {
     public class StoryPerProjectPerDateReport : IDictionary<DateTime, Dictionary<string, List<Data>>>
     {
-        public readonly Dictionary<DateTime, Dictionary<string, List<Data>>> Data;
+        public readonly IDictionary<DateTime, Dictionary<string, List<Data>>> Data;
 
         public StoryPerProjectPerDateReport(Report report)
         {
+            Data = new Dictionary<DateTime, Dictionary<string, List<Data>>>();
+
             foreach (var reportData in report.Datas)
             {
                 var date = reportData.Start.Date;

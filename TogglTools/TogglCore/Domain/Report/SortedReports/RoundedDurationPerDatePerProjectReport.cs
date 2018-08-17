@@ -6,10 +6,12 @@ namespace CoreySutton.TogglTools.TogglCore
 {
     public class RoundedDurationPerDatePerProjectReport : IDictionary<string, Dictionary<DateTime, double>>
     {
-        public readonly Dictionary<string, Dictionary<DateTime, double>> Data;
+        public readonly IDictionary<string, Dictionary<DateTime, double>> Data;
 
         public RoundedDurationPerDatePerProjectReport(Report report, double roundAt, double roundTo)
         {
+            Data = new Dictionary<string, Dictionary<DateTime, double>>();
+
             foreach (var reportData in report.Datas)
             {
                 // Set important information from data to variables to improve code readbility
