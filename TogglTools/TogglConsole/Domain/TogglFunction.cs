@@ -8,12 +8,12 @@ namespace CoreySutton.TogglTools.TogglConsole
     {
         public static TogglFunction ThisWeek
         {
-            get { return new TogglFunction("This Week", DateTimeUtil.GetMondayOfThisWeek()); }
+            get { return new TogglFunction("This Week", Date.GetMondayOfThisWeek()); }
         }
 
         public static TogglFunction LastWeek
         {
-            get { return new TogglFunction("Last Week", DateTimeUtil.GetMondayOfThisWeek().AddDays(-7)); }
+            get { return new TogglFunction("Last Week", Date.GetMondayOfThisWeek().AddDays(-7)); }
         }
 
         public static TogglFunction Today
@@ -34,7 +34,7 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         public TogglFunction(string name, DateTime since, DateTime? until = null)
         {
-            ArgUtil.NotNull(name);
+            Argument.IsNotNull(name);
 
             if (until.HasValue && !ValidatorUtil.IsDatesWithinXYears(since, until.Value, 1))
             {

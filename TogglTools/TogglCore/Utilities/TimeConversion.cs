@@ -17,7 +17,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static double RoundDuration(double duration, double roundAt, double roundTo)
         {
-            ArgUtil.GreaterThanOrEqualToZero(duration, nameof(duration));
+            Argument.IsGreaterThanOrEqualToZero(duration, nameof(duration));
 
             if (duration == 0d) return 0;
 

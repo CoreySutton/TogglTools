@@ -10,7 +10,7 @@ namespace CoreySutton.TogglTools.TogglConsole
     {
         public static Workspace Prompt(Workspaces workspaces)
         {
-            ArgUtil.NotNull(workspaces, nameof(workspaces));
+            Argument.IsNotNull(workspaces, nameof(workspaces));
 
             if (workspaces.Count == 1)
             {
@@ -32,7 +32,7 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         private static void PrintWorkspaceOptions(Workspaces workspaces)
         {
-            ArgUtil.NotNull(workspaces, nameof(workspaces));
+            Argument.IsNotNull(workspaces, nameof(workspaces));
 
             foreach (KeyValuePair<int, Workspace> workspaceKvp in workspaces)
             {
@@ -44,7 +44,7 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         private static Workspace PromptToEnterWorkspaceKey(Workspaces workspaces)
         {
-            ArgUtil.NotNull(workspaces, nameof(workspaces));
+            Argument.IsNotNull(workspaces, nameof(workspaces));
 
             while (true)
             {

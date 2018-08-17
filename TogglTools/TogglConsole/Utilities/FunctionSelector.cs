@@ -8,7 +8,7 @@ namespace CoreySutton.TogglTools.TogglConsole
     {
         public static TogglFunction Prompt(TogglFunctions functionCollection)
         {
-            ArgUtil.NotNull(functionCollection);
+            Argument.IsNotNull(functionCollection);
 
             Logger.LogLine();
             Logger.LogLine("Please select a function by entering the number:");

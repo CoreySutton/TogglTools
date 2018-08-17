@@ -32,7 +32,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static Report ProcessJsonResponse(string response)
         {
-            ArgUtil.NotNull(response);
+            Argument.IsNotNull(response);
 
             var report = JsonConvert.DeserializeObject<Report>(response);
             if (report == null) throw new NoNullAllowedException("Could not deserialize response");

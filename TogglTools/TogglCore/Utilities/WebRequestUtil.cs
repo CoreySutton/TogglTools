@@ -16,18 +16,18 @@ namespace CoreySutton.TogglTools.TogglCore
             string username,
             string password)
         {
-            ArgUtil.NotNull(request, nameof(request));
-            ArgUtil.NotNull(username, nameof(username));
-            ArgUtil.NotNull(password, nameof(password));
+            Argument.IsNotNull(request, nameof(request));
+            Argument.IsNotNull(username, nameof(username));
+            Argument.IsNotNull(password, nameof(password));
 
             var authInfo = username + ":" + password;
-            authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
+            authInfo = System.Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
             request.Headers.Add(HttpRequestHeader.Authorization, $"Basic {authInfo}");
         }
 
         public static string GetResponseString(WebResponse response)
         {
-            ArgUtil.NotNull(response, nameof(response));
+            Argument.IsNotNull(response, nameof(response));
 
             var dataStream = response.GetResponseStream();
             if (dataStream == null)
@@ -49,8 +49,8 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static IEnumerable<string> GetHeaders(string name, HttpRequestHeaders requestHeaders)
         {
-            ArgUtil.NotNull(name, nameof(name));
-            ArgUtil.NotNull(requestHeaders, nameof(requestHeaders));
+            Argument.IsNotNull(name, nameof(name));
+            Argument.IsNotNull(requestHeaders, nameof(requestHeaders));
 
             bool gotHeader = requestHeaders.TryGetValues(
                 name,
@@ -66,8 +66,8 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static string GetHeader(string name, HttpRequestHeaders requestHeaders)
         {
-            ArgUtil.NotNull(name, nameof(name));
-            ArgUtil.NotNull(requestHeaders, nameof(requestHeaders));
+            Argument.IsNotNull(name, nameof(name));
+            Argument.IsNotNull(requestHeaders, nameof(requestHeaders));
 
             List<string> headers = GetHeaders(name, requestHeaders).ToList<string>();
 

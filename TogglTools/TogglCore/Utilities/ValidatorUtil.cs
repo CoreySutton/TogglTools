@@ -9,9 +9,9 @@ namespace CoreySutton.TogglTools.TogglCore
     {
         public static bool IsDatesWithinXYears(DateTime since, DateTime until, int years)
         {
-            ArgUtil.NotNull(since);
-            ArgUtil.NotNull(until);
-            ArgUtil.GreaterThanZero(years);
+            Argument.IsNotNull(since);
+            Argument.IsNotNull(until);
+            Argument.IsGreaterThanZero(years);
 
             DateTime dateLimit = since.AddYears(years);
 
@@ -20,9 +20,9 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static bool IsDatesWithinXYears(string since, string until, int years)
         {
-            ArgUtil.NotNull(since);
-            ArgUtil.NotNull(until);
-            ArgUtil.GreaterThanZero(years);
+            Argument.IsNotNull(since);
+            Argument.IsNotNull(until);
+            Argument.IsGreaterThanZero(years);
 
             DateTime sinceDt = DateTime.Parse(since);
             DateTime untilDt = DateTime.Parse(until);
@@ -38,7 +38,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static string ValidateDate(string date)
         {
-            ArgUtil.NotNull(date);
+            Argument.IsNotNull(date);
 
             var dateComponents = date.Split('-');
             if (dateComponents.Length == 1)
@@ -94,7 +94,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static DateTime? ParseDateTimeString(string startDate, string startTime = null)
         {
-            ArgUtil.NotNull(startDate);
+            Argument.IsNotNull(startDate);
 
             DateTime start;
             if (startTime == null)

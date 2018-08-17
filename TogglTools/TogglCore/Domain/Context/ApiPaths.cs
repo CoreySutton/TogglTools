@@ -10,9 +10,9 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public ApiPaths(string domain, string workspaceEndpoint, string reportEndpoint)
         {
-            ArgUtil.NotNullOrEmpty(domain, nameof(domain));
-            ArgUtil.NotNullOrEmpty(workspaceEndpoint, nameof(workspaceEndpoint));
-            ArgUtil.NotNullOrEmpty(reportEndpoint, nameof(reportEndpoint));
+            Argument.IsNotNullOrEmpty(domain, nameof(domain));
+            Argument.IsNotNullOrEmpty(workspaceEndpoint, nameof(workspaceEndpoint));
+            Argument.IsNotNullOrEmpty(reportEndpoint, nameof(reportEndpoint));
 
             Domain = TrimTrailingCharacters(domain, "/");
             WorkspaceEndpoint = $"{domain}{workspaceEndpoint}";
@@ -21,8 +21,8 @@ namespace CoreySutton.TogglTools.TogglCore
 
         private string TrimTrailingCharacters(string value, string trailingCharacters)
         {
-            ArgUtil.NotNullOrEmpty(value, nameof(value));
-            ArgUtil.NotNullOrEmpty(trailingCharacters, nameof(trailingCharacters));
+            Argument.IsNotNullOrEmpty(value, nameof(value));
+            Argument.IsNotNullOrEmpty(trailingCharacters, nameof(trailingCharacters));
 
             return value.Substring(value.Length - trailingCharacters.Length) == trailingCharacters
                 ? value.Substring(0, value.Length - trailingCharacters.Length)

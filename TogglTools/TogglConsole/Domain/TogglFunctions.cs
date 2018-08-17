@@ -16,7 +16,7 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         public void Add(TogglFunction togglFunction)
         {
-            ArgUtil.NotNull(togglFunction);
+            Argument.IsNotNull(togglFunction);
 
             _functions.Add(_nextKeyValue++, togglFunction);
         }
@@ -35,7 +35,7 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         public TogglFunction GetByKey(int functionKey)
         {
-            ArgUtil.GreaterThanZero(functionKey);
+            Argument.IsGreaterThanZero(functionKey);
 
             if (_functions.TryGetValue(functionKey, out TogglFunction togglFunction))
             {

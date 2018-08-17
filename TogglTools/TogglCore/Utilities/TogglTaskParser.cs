@@ -6,7 +6,7 @@ namespace CoreySutton.TogglTools.TogglCore
     {
         public static string GetStoryName(string description)
         {
-            ArgUtil.NotNull(description);
+            Argument.IsNotNull(description);
 
             var splitDescription = description.Split(']');
 

@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoreySutton.Utilities, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CoreySutton.Utilities.0.1.1\lib\net47\CoreySutton.Utilities.dll</HintPath>
+    <Reference Include="CoreySutton.Utilities, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CoreySutton.Utilities.0.2.0\lib\net47\CoreySutton.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />

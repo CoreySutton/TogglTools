@@ -10,8 +10,8 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public ApiContext(ApiPaths paths, ApiCredentials credentials, ApiParameters parameters = null)
         {
-            ArgUtil.NotNull(paths, nameof(paths));
-            ArgUtil.NotNull(credentials, nameof(credentials));
+            Argument.IsNotNull(paths, nameof(paths));
+            Argument.IsNotNull(credentials, nameof(credentials));
 
             Paths = paths;
             Credentials = credentials;

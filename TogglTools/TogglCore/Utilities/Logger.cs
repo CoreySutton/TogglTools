@@ -32,7 +32,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         public static void Log(object message, ConsoleColor color = ConsoleColor.Gray)
         {
-            ArgUtil.NotNull(message);
+            Argument.IsNotNull(message);
 
             Console.ForegroundColor = color;
             Console.Write(message.ToString());

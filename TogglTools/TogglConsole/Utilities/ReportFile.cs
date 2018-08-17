@@ -10,8 +10,8 @@ namespace CoreySutton.TogglTools.TogglConsole
     {
         public static void Create(Report report, string outputFilePath)
         {
-            ArgUtil.NotNull(report);
-            ArgUtil.NotNull(outputFilePath);
+            Argument.IsNotNull(report);
+            Argument.IsNotNull(outputFilePath);
 
             Logger.LogLine("\nLogging report to file");
 
@@ -77,8 +77,8 @@ namespace CoreySutton.TogglTools.TogglConsole
 
         private static string GetHeader(DateTime date, string project, double totalDurationForProject)
         {
-            ArgUtil.NotNull(date);
-            ArgUtil.NotNullOrEmpty(project);
+            Argument.IsNotNull(date);
+            Argument.IsNotNullOrEmpty(project);
 
             return $"{date:yyyy-MM-dd}" +
                         $" || {project}" +

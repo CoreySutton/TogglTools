@@ -20,7 +20,7 @@ namespace CoreySutton.TogglTools.TogglCore
 
         private IDictionary<int, Workspace> ProcessWorkspacesResponse(string response)
         {
-            ArgUtil.NotNull(response);
+            Argument.IsNotNull(response);
 
             List<Workspace> workspaces = JsonConvert.DeserializeObject<List<Workspace>>(response);
 
