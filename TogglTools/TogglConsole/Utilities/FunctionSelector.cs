@@ -6,13 +6,13 @@ namespace CoreySutton.TogglTools.TogglConsole
 {
     public static class FunctionSelector
     {
-        public static TogglFunction Prompt(TogglFunctions functionCollection)
+        public static TogglFunction Prompt(TogglFunctions functions)
         {
-            Argument.IsNotNull(functionCollection);
+            Argument.IsNotNull(functions);
 
             Logger.LogLine();
             Logger.LogLine("Please select a function by entering the number:");
-            Logger.Log(functionCollection);
+            Logger.Log(functions);
 
             while (true)
             {
@@ -35,7 +35,7 @@ namespace CoreySutton.TogglTools.TogglConsole
                     continue;
                 }
 
-                TogglFunction togglFunction = functionCollection.GetByKey(functionKey);
+                TogglFunction togglFunction = functions.GetByKey(functionKey);
                 if (togglFunction == null)
                 {
                     LogErrorMessage();
