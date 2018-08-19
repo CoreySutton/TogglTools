@@ -11,7 +11,7 @@ namespace CoreySutton.TogglTools.TogglCore
         #region Instance Members
 
         [JsonProperty("total_grand")]
-        public int TotalGrand { get; set; }
+        public int? TotalGrand { get; set; }
 
         [JsonProperty("total_billable")]
         public object TotalBillable { get; set; }
