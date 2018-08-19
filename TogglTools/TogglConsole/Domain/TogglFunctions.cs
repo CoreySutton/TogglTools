@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using CoreySutton.Utilities;
 
@@ -45,11 +46,11 @@ namespace CoreySutton.TogglTools.TogglConsole
             return null;
         }
 
-        public static TogglFunctions BuildStandardCollection()
+        public static TogglFunctions BuildStandardCollection(DayOfWeek firstDayOfWeek)
         {
             var functionCollection = new TogglFunctions();
-            functionCollection.Add(TogglFunction.ThisWeek);
-            functionCollection.Add(TogglFunction.LastWeek);
+            functionCollection.Add(TogglFunction.ThisWeek(firstDayOfWeek));
+            functionCollection.Add(TogglFunction.LastWeek(firstDayOfWeek));
             functionCollection.Add(TogglFunction.Today);
             functionCollection.Add(TogglFunction.Yesterday);
 

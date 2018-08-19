@@ -6,14 +6,14 @@ namespace CoreySutton.TogglTools.TogglConsole
 {
     public class TogglFunction
     {
-        public static TogglFunction ThisWeek
+        public static TogglFunction ThisWeek(DayOfWeek firstDayOfWeek)
         {
-            get { return new TogglFunction("This Week", Date.GetMondayOfThisWeek()); }
+            return new TogglFunction("This Week", Date.GetFirstDayOfThisWeek(firstDayOfWeek));
         }
 
-        public static TogglFunction LastWeek
+        public static TogglFunction LastWeek(DayOfWeek firstDayOfWeek)
         {
-            get { return new TogglFunction("Last Week", Date.GetMondayOfThisWeek().AddDays(-7)); }
+            return new TogglFunction("Last Week", Date.GetFirstDayOfThisWeek(firstDayOfWeek).AddDays(-7));
         }
 
         public static TogglFunction Today

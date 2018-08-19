@@ -35,7 +35,7 @@ namespace CoreySutton.TogglTools.TogglConsole
                 DayOfWeek firstDayOfWeek = FirstDayOfWeekSelector.Prompt();
 
                 // Get the function collection
-                TogglFunctions functionCollection = TogglFunctions.BuildStandardCollection();
+                TogglFunctions functionCollection = TogglFunctions.BuildStandardCollection(firstDayOfWeek);
 
                 // Select a function
                 TogglFunction selectedFunction = FunctionSelector.Prompt(functionCollection);
