@@ -22,7 +22,7 @@ namespace CoreySutton.TogglTools.TogglReportApi
             };
             var context = new ApiContext(paths, credentials);
 
-            return new TogglApiRequest(context).GetWorkspaces();
+            return new TogglApi(context).GetWorkspaces();
         }
     }
 }

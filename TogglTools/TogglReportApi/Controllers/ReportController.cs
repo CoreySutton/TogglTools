@@ -31,7 +31,7 @@ namespace CoreySutton.TogglTools.TogglReportApi
             };
             var context = new ApiContext(paths, credentials, parameters);
 
-            return new TogglApiRequest(context).GetReport();
+            return new TogglApi(context).GetReport();
         }
     }
 }

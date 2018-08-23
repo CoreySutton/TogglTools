@@ -23,7 +23,7 @@ namespace CoreySutton.TogglTools.TogglConsole
                 ApiContext apiContext = new ApiContext(_paths, _credentials);
 
                 // Build request object
-                ITogglApiRequest apiRequest = new TogglApiRequest(apiContext);
+                TogglApi apiRequest = new TogglApi(apiContext);
 
                 // Get all the workspaces
                 Workspaces workspaces = apiRequest.GetWorkspaces();

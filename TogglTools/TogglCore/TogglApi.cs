@@ -7,11 +7,11 @@ namespace CoreySutton.TogglTools.TogglCore
     /// <summary>
     /// Implement request to https://toggl.com/api/
     /// </summary>
-    public class TogglApiRequest : ITogglApiRequest
+    public class TogglApi : ITogglApi
     {
         private readonly ApiContext _apiContext;
 
-        public TogglApiRequest(ApiContext apiContext)
+        public TogglApi(ApiContext apiContext)
         {
             _apiContext = apiContext;
         }
