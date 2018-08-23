@@ -22,6 +22,10 @@ namespace CoreySutton.TogglTools.Console
             {
                 DateTime date = durationPerStoryPerProjectPerDateKvp.Key;
 
+                output.Add($"############################################################" +
+                    $"{date:yyyy-MM-dd}" +
+                    $"############################################################");
+
                 foreach (var durationPerStoryPerProjectKvp in durationPerStoryPerProjectPerDateKvp.Value)
                 {
                     var storiesForDay = GetStoriesForDay(
@@ -87,13 +91,13 @@ namespace CoreySutton.TogglTools.Console
 
         private static string GetBorder(int length)
         {
-            string hash = string.Empty;
+            string border = string.Empty;
             for (var i = 0; i < length; i++)
             {
-                hash += "#";
+                border += "*";
             }
 
-            return hash;
+            return border;
         }
     }
 }
