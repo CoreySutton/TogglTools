@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     public static class WorkspaceSelector
     {
@@ -50,25 +50,25 @@ namespace CoreySutton.TogglTools.TogglConsole
             {
                 Logger.LogLine($"Please select a workspace (1-{workspaces.Count}):");
 
-                Console.Write(">> ");
-                string indexInput = Console.ReadLine();
+                System.Console.Write(">> ");
+                string indexInput = System.Console.ReadLine();
 
                 if (string.IsNullOrEmpty(indexInput))
                 {
-                    Console.WriteLine("You must enter a workspace number");
+                    System.Console.WriteLine("You must enter a workspace number");
                     continue;
                 }
 
                 bool parsed = int.TryParse(indexInput, out int index);
                 if (!parsed)
                 {
-                    Console.WriteLine("You must enter a number");
+                    System.Console.WriteLine("You must enter a number");
                     continue;
                 }
 
                 if (index < 1 || index > workspaces.Count)
                 {
-                    Console.WriteLine($"You must enter a number between 1 and {workspaces.Count}");
+                    System.Console.WriteLine($"You must enter a number between 1 and {workspaces.Count}");
                     continue;
                 }
 

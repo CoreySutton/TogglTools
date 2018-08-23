@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     public class TogglFunctions
     {

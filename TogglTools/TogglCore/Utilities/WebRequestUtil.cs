@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglCore
+namespace CoreySutton.TogglTools.Core
 {
     public static class WebUtil
     {

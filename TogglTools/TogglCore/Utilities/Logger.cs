@@ -1,7 +1,7 @@
 ﻿using System;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglCore
+namespace CoreySutton.TogglTools.Core
 {
     public class Logger
     {

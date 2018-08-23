@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoreySutton.TogglTools.TogglReportApi.Properties {
+namespace CoreySutton.TogglTools.Api.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglCore", "TogglCore\TogglCore.csproj", "{60FFFD76-3AFA-487B-B002-42E0861F8862}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "TogglCore\Core.csproj", "{60FFFD76-3AFA-487B-B002-42E0861F8862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglReportApi", "TogglReportApi\TogglReportApi.csproj", "{B9B1F07A-D7D6-45A7-A42F-8622572D2E36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "TogglReportApi\Api.csproj", "{B9B1F07A-D7D6-45A7-A42F-8622572D2E36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglConsole", "TogglConsole\TogglConsole.csproj", "{461B17C1-C9AE-481F-9EC5-8870CC9F782F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "TogglConsole\Console.csproj", "{461B17C1-C9AE-481F-9EC5-8870CC9F782F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

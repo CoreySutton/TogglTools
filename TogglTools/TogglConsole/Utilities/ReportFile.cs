@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     class ReportFile
     {

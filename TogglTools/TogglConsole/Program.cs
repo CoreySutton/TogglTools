@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     internal class Program
     {
@@ -87,7 +87,7 @@ namespace CoreySutton.TogglTools.TogglConsole
             if (_successfulRun == false)
             {
                 Logger.LogLine("Execution complete. Press <enter> to close application...");
-                Console.ReadLine();
+                System.Console.ReadLine();
             }
         }
 

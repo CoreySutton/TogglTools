@@ -1,8 +1,8 @@
 ﻿using System;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     public class TogglFunction
     {

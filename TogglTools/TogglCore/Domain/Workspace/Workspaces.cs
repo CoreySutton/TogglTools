@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CoreySutton.Utilities;
 using Newtonsoft.Json;
 
-namespace CoreySutton.TogglTools.TogglCore
+namespace CoreySutton.TogglTools.Core
 {
     public class Workspaces : IDictionary<int, Workspace>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     public static class FunctionSelector
     {
@@ -17,8 +17,8 @@ namespace CoreySutton.TogglTools.TogglConsole
             while (true)
             {
                 // Get user input
-                Console.Write(">> ");
-                string inputLine = Console.ReadLine();
+                System.Console.Write(">> ");
+                string inputLine = System.Console.ReadLine();
 
                 // Null check the input
                 if (string.IsNullOrEmpty(inputLine))

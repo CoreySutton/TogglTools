@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace TogglReportApi
+namespace CoreySutton.TogglTools.Api
 {
     public static class WebApiConfig
     {

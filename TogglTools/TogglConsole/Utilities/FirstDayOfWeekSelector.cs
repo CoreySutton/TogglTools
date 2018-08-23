@@ -1,40 +1,40 @@
 ﻿using System;
 
-namespace CoreySutton.TogglTools.TogglConsole
+namespace CoreySutton.TogglTools.Console
 {
     class FirstDayOfWeekSelector
     {
         public static DayOfWeek Prompt()
         {
-            Console.WriteLine("Please select first day of week:");
-            Console.WriteLine($"(1){DayOfWeek.Sunday}");
-            Console.WriteLine($"(2){DayOfWeek.Monday}");
-            Console.WriteLine($"(3){DayOfWeek.Tuesday}");
-            Console.WriteLine($"(4){DayOfWeek.Wednesday}");
-            Console.WriteLine($"(5){DayOfWeek.Thursday}");
-            Console.WriteLine($"(6){DayOfWeek.Friday}");
-            Console.WriteLine($"(7){DayOfWeek.Saturday}");
+            System.Console.WriteLine("Please select first day of week:");
+            System.Console.WriteLine($"(1){DayOfWeek.Sunday}");
+            System.Console.WriteLine($"(2){DayOfWeek.Monday}");
+            System.Console.WriteLine($"(3){DayOfWeek.Tuesday}");
+            System.Console.WriteLine($"(4){DayOfWeek.Wednesday}");
+            System.Console.WriteLine($"(5){DayOfWeek.Thursday}");
+            System.Console.WriteLine($"(6){DayOfWeek.Friday}");
+            System.Console.WriteLine($"(7){DayOfWeek.Saturday}");
 
             while (true)
             {
-                Console.Write(">> ");
-                string inputString = Console.ReadLine();
+                System.Console.Write(">> ");
+                string inputString = System.Console.ReadLine();
 
                 if (string.IsNullOrEmpty(inputString))
                 {
-                    Console.WriteLine("Please select a day of week");
+                    System.Console.WriteLine("Please select a day of week");
                     continue;
                 }
 
                 bool parsed = int.TryParse(inputString, out int input);
                 if (!parsed)
                 {
-                    Console.WriteLine("Please enter a valid number");
+                    System.Console.WriteLine("Please enter a valid number");
                 }
 
                 if (input < 1 || input > 7)
                 {
-                    Console.WriteLine("Please enter a number between 1 and 7");
+                    System.Console.WriteLine("Please enter a number between 1 and 7");
                 }
 
 

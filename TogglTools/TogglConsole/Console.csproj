@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{461B17C1-C9AE-481F-9EC5-8870CC9F782F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CoreySutton.TogglTools.TogglConsole</RootNamespace>
-    <AssemblyName>CoreySutton.TogglTools.TogglConsole</AssemblyName>
+    <RootNamespace>CoreySutton.TogglTools.Console</RootNamespace>
+    <AssemblyName>CoreySutton.TogglTools.Console</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -69,9 +69,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TogglCore\TogglCore.csproj">
+    <ProjectReference Include="..\TogglCore\Core.csproj">
       <Project>{60fffd76-3afa-487b-b002-42e0861f8862}</Project>
-      <Name>TogglCore</Name>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

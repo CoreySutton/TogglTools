@@ -2,7 +2,7 @@
 using System.Data;
 using System.Net;
 
-namespace CoreySutton.TogglTools.TogglCore
+namespace CoreySutton.TogglTools.Core
 {
     /// <summary>
     /// Implement request to https://toggl.com/api/

@@ -1,4 +1,4 @@
-﻿namespace CoreySutton.TogglTools.TogglCore
+﻿namespace CoreySutton.TogglTools.Core
 {
     public static class PathUtil
     {

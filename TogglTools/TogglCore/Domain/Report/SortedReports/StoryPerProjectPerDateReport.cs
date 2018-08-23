@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace CoreySutton.TogglTools.TogglCore
+namespace CoreySutton.TogglTools.Core
 {
     public class StoryPerProjectPerDateReport : IDictionary<DateTime, Dictionary<string, List<Data>>>
     {

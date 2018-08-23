@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Web.Http;
-using CoreySutton.TogglTools.TogglCore;
+using CoreySutton.TogglTools.Core;
 
-namespace CoreySutton.TogglTools.TogglReportApi
+namespace CoreySutton.TogglTools.Api
 {
     public class ReportController : ApiController
     {
