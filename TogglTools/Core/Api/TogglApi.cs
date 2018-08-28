@@ -33,6 +33,48 @@ namespace CoreySutton.TogglTools.Core
                 Settings.TogglApiReportEndpoint);
         }
 
+        public Report GetReportForThisWeek(string workspaceKey, DayOfWeek firstdayOfWeek)
+        {
+            Argument.IsNotNull(workspaceKey, nameof(workspaceKey));
+
+            DateTime firstdayOfThisWeek = Date.GetFirstDayOfThisWeek(firstdayOfWeek);
+            var parameters = new ApiParameters(workspaceKey, firstdayOfThisWeek);
+            return GetReport(parameters);
+        }
+
+        public Report GetReportForLastWeek(string workspaceKey, DayOfWeek firstdayOfWeek)
+        {
+            Argument.IsNotNull(workspaceKey, nameof(workspaceKey));
+
+            DateTime firstdayOfThisWeek = Date.GetFirstDayOfThisWeek(firstdayOfWeek);
+            var parameters = new ApiParameters(workspaceKey, firstdayOfThisWeek.AddDays(-7));
+            return GetReport(parameters);
+        }
+
+        public Report GetReportForToday(string workspaceKey)
+        {
+            Argument.IsNotNull(workspaceKey, nameof(workspaceKey));
+
+            var parameters = new ApiParameters(workspaceKey, DateTime.Today, DateTime.Today);
+            return GetReport(parameters);
+        }
+
+        public Report GetReportForYesterday(string workspaceKey)
+        {
+            Argument.IsNotNull(workspaceKey, nameof(workspaceKey));
+
+            var parameters = new ApiParameters(workspaceKey, DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+            return GetReport(parameters);
+        }
+
+        public Report GetReportForDate(string workspaceKey, DateTime date)
+        {
+            Argument.IsNotNull(workspaceKey, nameof(workspaceKey));
+
+            var parameters = new ApiParameters(workspaceKey, date);
+            return GetReport(parameters);
+        }
+
         public Report GetReport(ApiParameters parameters)
         {
             Argument.IsNotNull(parameters, nameof(parameters));
