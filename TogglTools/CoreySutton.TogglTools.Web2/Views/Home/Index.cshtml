@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Toggl Reporting";
+}
+
+<h1>Toggl Reporting</h1>
+<p>
+    Complete the form to produce a report for this week's time tracked in <a href="https://toggl.com/">Toggl</a>.
+    Your API key can be found under "My Profile" on your Toggl account.
+</p>
+<p>
+    Toggle comments are expected as any of the following formats:
+    <ul>
+        <li>Comment</li>
+        <li>[StoryNumber] Comment</li>
+        <li>[StoryNumber][Task Number] Comment</li>
+    </ul>
+    Each items is grouped by story number per project per date and output to a table.
+</p>
+
+<div id="content-section">
+    <div class="clearfix">
+        <div id="wokrspaces-request-section">
+            @Html.Partial("_WorkspaceRequestForm")
+        </div>
+        <div id="workspaces-response-section"></div>
+    </div>
+    <div id="report-response-section"></div>
+</div>

@@ -1,0 +1,50 @@
+﻿@using CoreySutton.TogglTools.Web2;
+@using System.Collections.Generic;
+@using CoreySutton.TogglTools.Core;
+@model WorkspaceResponseViewModel
+
+<div id="workspaces-response-sub-section">
+
+    @if (Model?.ErrorMessages != null && Model.ErrorMessages.Count != 0)
+    {
+        <p>Error:</p>
+        <ul>
+            @foreach (var errorMessage in Model.ErrorMessages)
+            {
+                <li>@errorMessage</li>
+            }
+        </ul>
+    }
+    else if (Model?.Workspaces == null || Model.Workspaces.Count == 0)
+    {
+        <p>No workspaces are available</p>
+    }
+    else
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Worspace Name</th>
+                    <th>Workspace Key</th>
+                </tr>
+            </thead>
+            <tbody id="workspaces-table-body" class="table table-striped">
+                @foreach (KeyValuePair<int, Workspace> kvp in Model.Workspaces)
+                {
+                    // This will give the row the class if it's the only row
+                    var className = Model.Workspaces.Count == 1 ? "workspaces-table-row-selected" : null;
+                    var buttonId = $"workspace-radio-select-{kvp.Value}";
+
+                    <tr class="@className">
+                        <td><input id="@buttonId" type="radio" class="workspace-radio-item" name="workspace-radio-item" 
+                                   value="@kvp.Value.Id" onchange="Site.onSelectWorkspaceRadio()"></td>
+                        <td>@kvp.Value.Id</td>
+                        <td>@kvp.Value.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.Partial("_ReportRequestForm", new ReportRequestFormViewModel(Model.Email, Model.ApiToken))
+    }
+</div>
