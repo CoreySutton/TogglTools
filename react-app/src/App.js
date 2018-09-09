@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Credentials from './components/Credentials';
-import Workspaces from './components/Workspaces';
+import React, { Component } from "react";
+import Credentials from "./components/Credentials";
+import Workspaces from "./components/Workspaces";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Credentials />
         <Workspaces />
-      </div>
+      </React.Fragment>
     );
   }
 }
