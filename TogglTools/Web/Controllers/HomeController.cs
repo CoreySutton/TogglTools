@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.Web2
+namespace CoreySutton.TogglTools.Web
 {
     public class HomeController : Controller
     {

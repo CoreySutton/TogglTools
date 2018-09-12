@@ -1,4 +1,4 @@
-﻿namespace CoreySutton.TogglTools.Web2
+﻿namespace CoreySutton.TogglTools.Web
 {
     public class WorkspaceTenroxMultiViewModel
     {

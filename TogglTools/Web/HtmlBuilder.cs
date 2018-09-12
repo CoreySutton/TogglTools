@@ -4,7 +4,7 @@ using System.Text;
 using CoreySutton.TogglTools.Core;
 using CoreySutton.Utilities;
 
-namespace CoreySutton.TogglTools.Web2
+namespace CoreySutton.TogglTools.Web
 {
     public static class HtmlBuilder
     {

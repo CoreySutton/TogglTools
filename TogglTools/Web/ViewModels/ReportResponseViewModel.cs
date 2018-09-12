@@ -1,7 +1,7 @@
 ﻿using System;
 using CoreySutton.TogglTools.Core;
 
-namespace CoreySutton.TogglTools.Web2
+namespace CoreySutton.TogglTools.Web
 {
     public class ReportResponseViewModel
     {

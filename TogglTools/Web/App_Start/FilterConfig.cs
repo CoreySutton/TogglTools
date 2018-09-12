@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace CoreySutton.TogglTools.Web22
+namespace CoreySutton.TogglTools.Web
 {
     public class FilterConfig
     {
