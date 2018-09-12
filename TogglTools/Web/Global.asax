@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="CoreySutton.TogglTools.Web22.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="CoreySutton.TogglTools.Web.MvcApplication" Language="C#" %>

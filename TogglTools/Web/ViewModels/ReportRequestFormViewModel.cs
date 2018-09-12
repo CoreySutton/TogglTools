@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CoreySutton.TogglTools.Web2
+namespace CoreySutton.TogglTools.Web
 {
     public class ReportRequestFormViewModel
     {

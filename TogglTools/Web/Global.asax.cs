@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace CoreySutton.TogglTools.Web22
+namespace CoreySutton.TogglTools.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
