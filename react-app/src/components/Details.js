@@ -1,28 +1,34 @@
 import React, { Component } from "react";
 
-class DetailedReport extends Component {
+class Details extends Component {
   state = {};
   render() {
     return (
       <div className="container">
-        <h2>Detailed Report</h2>
         <table className="table">
-          <tr>
-            <th scope="col">Project</th>
-            <th scope="col">Mon 01/01</th>
-            <th scope="col">Tue 01/01</th>
-            <th scope="col">Wed 01/01</th>
-            <th scope="col">Thu 01/01</th>
-            <th scope="col">Fri 01/01</th>
-            <th scope="col">Sat 01/01</th>
-            <th scope="col">Sun 01/01</th>
-          </tr>
+          <thead className="thead-dark">
+            <tr>
+              <th colSpan="8">
+                <h2>Details</h2>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">Project</th>
+              <th scope="col">Mon 01/01</th>
+              <th scope="col">Tue 01/01</th>
+              <th scope="col">Wed 01/01</th>
+              <th scope="col">Thu 01/01</th>
+              <th scope="col">Fri 01/01</th>
+              <th scope="col">Sat 01/01</th>
+              <th scope="col">Sun 01/01</th>
+            </tr>
+          </thead>
           <tr>
             <th scope="row">Project 1</th>
             <td>
-              <p className="report-task">[#1] Added base project</p>
-              <p className="report-task">[#2] Updated wiki</p>
-              <p className="report-task">[#3] Stand-up</p>
+              <p className="task">[#1] Added base project</p>
+              <p className="task">[#2] Updated wiki</p>
+              <p className="task">[#3] Stand-up</p>
             </td>
             <td />
             <td />
@@ -57,4 +63,4 @@ class DetailedReport extends Component {
   }
 }
 
-export default DetailedReport;
+export default Details;
