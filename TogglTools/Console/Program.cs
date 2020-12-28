@@ -38,10 +38,16 @@ namespace CoreySutton.TogglTools.Console
                 // Select a function
                 TogglFunction selectedFunction = FunctionSelector.Prompt(functionCollection);
 
+                if (selectedFunction.Name == "Custom Range")
+                {
+                    selectedFunction.Since = CustomRangeSelector.PromptForSince();
+                    selectedFunction.Until = CustomRangeSelector.PromptForUntil(selectedFunction.Since.Value);
+                }
+
                 // Build parameters
                 var parameters = new ApiParameters(
                     selectedWorkspace.Id, 
-                    selectedFunction.Since, 
+                    selectedFunction.Since.Value, 
                     selectedFunction.Until);
 
                 // Get report from Toggl

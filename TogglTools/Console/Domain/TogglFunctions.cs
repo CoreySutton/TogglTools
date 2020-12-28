@@ -49,6 +49,7 @@ namespace CoreySutton.TogglTools.Console
         public static TogglFunctions BuildStandardCollection(DayOfWeek firstDayOfWeek)
         {
             var functionCollection = new TogglFunctions();
+            functionCollection.Add(TogglFunction.CustomRange);
             functionCollection.Add(TogglFunction.ThisWeek(firstDayOfWeek));
             functionCollection.Add(TogglFunction.LastWeek(firstDayOfWeek));
             functionCollection.Add(TogglFunction.Today);

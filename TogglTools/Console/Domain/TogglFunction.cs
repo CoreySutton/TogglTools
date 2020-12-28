@@ -26,11 +26,43 @@ namespace CoreySutton.TogglTools.Console
             get { return new TogglFunction("Yesterday", DateTime.Today.AddDays(-1)); }
         }
 
+        public static TogglFunction CustomRange
+        {
+            get { return new TogglFunction("Custom Range"); }
+        }
+
         public readonly string Name;
 
-        public readonly DateTime Since;
+        private DateTime? since;
+        public DateTime? Since
+        {
+            get { return since; }
+            set
+            {
+                if (value.HasValue && Until.HasValue && !ValidatorUtil.IsDatesWithinXYears(value.Value, Until.Value, 1))
+                {
+                    throw new ArgumentOutOfRangeException(
+                        $"{nameof(Since)} and {nameof(Until)} cannot be more than a year apart.");
+                }
 
-        public readonly DateTime Until;
+                since = value;
+            }
+        }
+
+        private DateTime? until;
+        public DateTime? Until {
+            get { return until; }
+            set
+            {
+                if (Since.HasValue && value.HasValue && !ValidatorUtil.IsDatesWithinXYears(Since.Value, value.Value, 1))
+                {
+                    throw new ArgumentOutOfRangeException(
+                        $"{nameof(Since)} and {nameof(Until)} cannot be more than a year apart.");
+                }
+
+                until = value;
+            }
+        }
 
         public TogglFunction(string name, DateTime since, DateTime? until = null)
         {
@@ -44,6 +76,12 @@ namespace CoreySutton.TogglTools.Console
             Name = name;
             Since = since;
             Until = until ?? since.AddDays(7);
+        }
+
+        public TogglFunction(string name)
+        {
+            Argument.IsNotNull(name);
+            Name = name;
         }
     }
 }

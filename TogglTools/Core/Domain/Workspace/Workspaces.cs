@@ -9,7 +9,7 @@ namespace CoreySutton.TogglTools.Core
     {
         public readonly IDictionary<int, Workspace> Data;
 
-        public Workspaces(string response = null)
+        public Workspaces(string? response = null)
         {
             Data = new Dictionary<int, Workspace>();
             if (response != null)
