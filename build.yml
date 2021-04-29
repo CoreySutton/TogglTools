@@ -57,7 +57,7 @@ stages:
       artifact: drop
 
 - stage: Deploy
-  displayName: Deploy stage
+  displayName: Deploy TogglReportingV2-Dev
   dependsOn: Build
   condition: succeeded()
   jobs:
@@ -81,5 +81,6 @@ stages:
               StartupCommand: 'npm run start'
               ScriptType: 'Inline Script'
               InlineScript: |
+                cd TogglTools/reactclient
                 npm install
                 npm run build --if-present
