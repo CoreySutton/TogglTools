@@ -39,7 +39,8 @@ export class TogglApi
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Basic ${btoa(`${this.ApiToken ?? this.Email}:${this.ApiToken ? 'api_token' : this.Password}`)}`
-            }
+            },
+            credentials: "include"
         }
         
         const response = await fetch(resource, options);
