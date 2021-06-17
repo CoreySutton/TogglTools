@@ -1,0 +1,37 @@
+﻿@using CoreySutton.TogglTools.Web;
+@model WorkspaceRequestFormViewModel
+
+@{
+    // The AjaxOptions determine the behavior of the AJAX call
+    // (e.g.what method on the server is called, what html element to update upon completion, etc.)
+    var ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "workspaces-response-section",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        OnBegin = "Site.onBeginWorkspaceRequest"
+    };
+}
+
+<div id="workspaces-request-form-area">
+
+    @using (Ajax.BeginForm("GetWorkspacesFormAction", "Home", ajaxOptions))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ApiToken)
+            @Html.TextBoxFor(m => m.ApiToken, new { @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.ApiToken)
+        </div>
+
+        <input type="submit" value="Get Workspaces">
+    }
+
+</div>
