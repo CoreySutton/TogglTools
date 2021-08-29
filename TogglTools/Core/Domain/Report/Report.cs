@@ -62,10 +62,10 @@ namespace CoreySutton.TogglTools.Core
     public class Data
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonProperty("pid")]
-        public int? Pid { get; set; }
+        public long? Pid { get; set; }
 
         [JsonProperty("title")]
         public Title Title { get; set; }

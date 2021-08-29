@@ -12,7 +12,7 @@ namespace CoreySutton.TogglTools.Console.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,16 +25,7 @@ namespace CoreySutton.TogglTools.Console.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("41975f06a6ddb2df97ab5e84b8a17930")]
-        public string ApiToken {
-            get {
-                return ((string)(this["ApiToken"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("coreysutton@outlook.co.nz")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Email {
             get {
                 return ((string)(this["Email"]));
@@ -47,6 +38,15 @@ namespace CoreySutton.TogglTools.Console.Properties {
         public string OutputPath {
             get {
                 return ((string)(this["OutputPath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ApiToken {
+            get {
+                return ((string)(this["ApiToken"]));
             }
         }
     }
