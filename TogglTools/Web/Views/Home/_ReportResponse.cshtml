@@ -1,0 +1,28 @@
+﻿@using CoreySutton.TogglTools.Web;
+@model ReportResponseViewModel
+
+<div id="report-response-sub-section">
+    @if (Model?.HtmlSummaryTable == null || Model.HtmlDetailedTable == null || Model.ErrorMessage != null)
+    {
+        if (Model.ErrorMessage == null)
+        {
+            <p>An error occured</p>
+        }
+        else
+        {
+            <p>An error occured: @Model.ErrorMessage</p>
+        }
+    }
+    else
+    {
+        <div id="report-summary-section">
+            <h2>Summary Report for Week By Project</h2>
+            @Html.Raw(Model.HtmlSummaryTable)
+        </div>
+
+        <div id="report-detailed-section">
+            <h2>Detailed Report for Week By Project</h2>
+            @Html.Raw(Model.HtmlDetailedTable)
+        </div>
+    }
+</div>

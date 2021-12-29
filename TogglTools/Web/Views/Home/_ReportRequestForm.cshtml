@@ -1,0 +1,94 @@
+﻿@using CoreySutton.Utilities;
+@using CoreySutton.TogglTools.Web;
+@model ReportRequestFormViewModel
+@{
+    // The AjaxOptions determine the behavior of the AJAX call
+    // (e.g.what method on the server is called, what html element to update upon completion, etc.)
+    var ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "report-response-section",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        OnBegin = "Site.onBeginReportRequest",
+        OnFailure = "Site.onFailureReportRequest"
+    };
+}
+
+@if (Model.Email == null || Model.ApiToken == null)
+{
+    <p>An error occured. Please try again later</p>
+}
+else
+{
+    using (Ajax.BeginForm("GetReportFormAction", "Home", ajaxOptions, new {}))
+    {
+        @Html.AntiForgeryToken();
+        var htmlAttrForWorkspaceIdTextBox = new {id = "workspace-id-form-control", @class = "form-control", Value = ""};
+        var htmlAttrForEmailTextBox = new {id = "workspace-email-form-control", @class = "form-control", Value = Model.Email};
+        var htmlAttrForApiTokenTextBox = new {id = "workspace-api-token-form-control", @class = "form-control", Value = Model.ApiToken};
+        var saturdayOfThisWeek = Date.GetFirstDayOfThisWeek(DayOfWeek.Saturday);
+        var fridayOfThisWeek = saturdayOfThisWeek.AddDays(6);
+
+        <div id="report-form-advanced-settings-section" class="form-group">
+            <label><input id="advanced-settings-checkbox" class="checkbox-inline" name="advanced-settings-checkbox" type="checkbox"/>Advanced Settings</label>
+
+            @Html.LabelFor(m => m.RoundAt)
+            @Html.TextBoxFor(m => m.RoundAt, new
+            {
+                @class = "advanced-setting form-control input-sm",
+                @readonly = true,
+                id = "advanced-setting-round-at",
+                type = "number",
+                min = "1",
+                step = "1",
+                max = "59",
+                Value = "5"
+            })
+            @Html.ValidationMessageFor(m => m.RoundAt)
+            <span class="help-block">A number between 1 and 59</span>
+
+            @Html.LabelFor(m => m.RoundTo)
+            @Html.TextBoxFor(m => m.RoundTo, new
+            {
+                @class = "advanced-setting form-control input-sm",
+                @readonly = true,
+                id = "advanced-setting-round-to",
+                type = "number",
+                min = "1",
+                step = "1",
+                max = "60",
+                Value = "15"
+            })
+            @Html.ValidationMessageFor(m => m.RoundTo)
+            <span class="help-block">A number between 1 and 60</span>
+
+            @Html.LabelFor(m => m.RangeStart)
+            @Html.TextBoxFor(m => m.RangeStart, new
+       {
+           @class = "advanced-setting form-control input-sm",
+           @readonly = true,
+           id = "advanced-setting-rangestart",
+           Value = saturdayOfThisWeek.ToString("dd/MM/yyyy")
+       })
+            @Html.ValidationMessageFor(m => m.RangeStart)
+            <span class="help-block">Date range start</span>
+
+            @Html.LabelFor(m => m.RangeEnd)
+            @Html.TextBoxFor(m => m.RangeEnd, new
+               {
+                   @class = "advanced-setting form-control input-sm",
+                   @readonly = true,
+                   id = "advanced-setting-rangestart",
+                   Value = fridayOfThisWeek.ToString("dd/MM/yyyy")
+               })
+            @Html.ValidationMessageFor(m => m.RangeEnd)
+            <span class="help-block">Date range end</span>
+        </div>
+
+        @Html.TextBoxFor(m => m.WorkspaceId, htmlAttrForWorkspaceIdTextBox)
+        @Html.TextBoxFor(m => m.Email, htmlAttrForEmailTextBox)
+        @Html.TextBoxFor(m => m.ApiToken, htmlAttrForApiTokenTextBox)
+
+        <input id="tenrox-request-form-submit" type="submit" value="Select Workspace"/>
+    }
+}
